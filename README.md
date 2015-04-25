@@ -27,3 +27,14 @@ Each component is modular and does not require or depend on other components. Th
   - item.js
   - list.js
 - index.js
+
+# Setup
+
+## Setup Local Config File
+
+Create a cinfig JS file in the root directory called "config.local.js". Add the following gloabl vars in the file for API.
+
+- window.app_base_url = 'https://domain.com';
+- window.app_api_url = '/api';
+- window.app_api_version = '/v2';
+- window.access_token = '';
