@@ -1,50 +1,63 @@
 require.config({
   paths : {
     //Main
-    backbone : 'vendor/backbone/backbone.min',
-    underscore : 'vendor/underscore/underscore.min',
-    jquery : 'vendor/jquery/jquery.min',
-    marionette : 'vendor/marionette/marionette.min',
-    backbone_relational : 'vendor/backbone-relational/backbone-relational.min',
-    ImgCache : 'vendor/imagecache/imgcache.min',
-    Lawnchair : 'vendor/lawnchair/lawnchair.min',
-    'backbone.offline': 'vendor/backbone-offline/backbone.offline.min',
-    bootstrap : 'vendor/bootstrap/bootstrap.min',
-    moment : 'vendor/moment/moment.min',
+    jquery : 'vendor/jquery/dist/jquery',
+    'jquery.ui' : 'vendor/jquery-ui/jquery-ui',
+    'jquery.touchswipe' : 'vendor/jquery-touchswipe/jquery.touchSwipe',
+    underscore : 'vendor/underscore/underscore',
+    backbone : 'vendor/backbone/backbone',
+    backbone_relational : 'vendor/backbone.relational/backbone-relational',
+    marionette : 'vendor/marionette/lib/backbone.marionette',
+    imgcache : 'vendor/imgcache.js/js/imgcache',
+    imagesloaded : 'vendor/imagesloaded/imagesloaded',
+    lawnchair : 'vendor/lawnchair/lawnchair',
+    'backbone.offline': 'vendor/backbone-offline/backbone.offline',
+    bootstrap : 'vendor/bootstrap/bootstrap',
+    moment : 'vendor/moment/moment',
     //RequireJS Plugin
-    text: 'vendor/text/text.min', 
+    text: 'vendor/text/text', 
     //App
     app: 'app',
     vent: 'vent',
   },
   shim : {
     jquery : {
-      exports : 'jQuery'
+      exports : 'jquery'
+    },
+    jquery_ui : {
+      exports : 'jquery_ui'
+    },
+    jquery_touchswipe : {
+      exports : 'jquery_touchswipe'
     },
     underscore : {
       exports : '_'
     },
     backbone : {
       deps : ['jquery', 'underscore'],
-      exports : 'Backbone'
+      exports : 'backbone'
     },
     marionette : {
       deps : ['jquery', 'underscore', 'backbone'],
-      exports : 'Marionette'
+      exports : 'marionette'
     },
     backbone_relational : {
       deps : ['backbone']
     },
-    Lawnchair: {
-      exports: 'Lawnchair'
+    lawnchair: {
+      exports: 'lawnchair'
     },
     'backbone.offline': {
-      deps: ['underscore', 'backbone', 'Lawnchair'],
-      exports: 'Offline'
+      deps: ['underscore', 'backbone', 'lawnchair'],
+      exports: 'offline'
     },
     bootstrap: {
       deps: ['jquery'],
       exports: 'bootstrap'
+    },
+    imgcache: {
+      deps: ['imagesloaded'],
+      exports: 'imgcache'
     }
   },
   waitSeconds: 0
