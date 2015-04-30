@@ -1,6 +1,6 @@
 define(['marionette','vent' //Libraries
     //Views
-    ,'./item'
+    ,'./item', './empty'
     //Controllers
     ,'../controllers/list'
     //Templates
@@ -9,7 +9,7 @@ define(['marionette','vent' //Libraries
 	], 
 	function(Marionette,vent //Libraries
     //Views
-    ,ItemView
+    ,ItemView, EmptyView
     //Controllers
     ,ListController
     //Templates
@@ -21,7 +21,9 @@ define(['marionette','vent' //Libraries
 		childView: ItemView,
 		className: 'row',
 		childViewContainer: ".list-items",
-		
+
+    emptyView : EmptyView,
+
 		events: {
 		  //Add New, Bulk Action Events
 		},
@@ -29,6 +31,7 @@ define(['marionette','vent' //Libraries
 		initialize: function(){
       //Tell everyon that view has been initialized
       vent.trigger("user:list:initialize",{view:this});
+
     },
     onBeforeRender: function(){
       //Tell everyon that view has been almost rendered

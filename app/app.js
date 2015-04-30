@@ -7,12 +7,12 @@ define(['backbone', 'marionette', 'vent',
         User
         ){
 
-  //Create Aoo
+  //Create App
   MyApp = new Backbone.Marionette.Application();
 
   //Add App Reagions
   MyApp.addRegions({
-  	header: 	"#header",
+  	header: 	  "#header",
   	container:  "#content",
   	footer:     "#footer"
   });

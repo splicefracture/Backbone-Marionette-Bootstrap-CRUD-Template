@@ -9,13 +9,17 @@ function(Backbone,vent
     //Set API url
   	url: window.app_base_url + window.app_api_url + window.app_api_version + '/users',
     //Save Old Sync
-  	sync:  Backbone.sync,
+  	sync: Backbone.sync,
     //Set model
   	model: User,
+
     //Initialize collection
   	initialize: function(){
   		vent.trigger("user:collection:initialize",{collection:this});
-  	}
+  	},
+    parse: function(response, options){
+      return response.records;
+    },
 
 	});
 

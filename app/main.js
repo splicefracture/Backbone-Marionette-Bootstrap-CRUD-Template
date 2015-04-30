@@ -66,7 +66,6 @@ require.config({
 require(['app'], function(MyApp) {
 
   var options = {};
-
   MyApp.start(options);
 
 })
